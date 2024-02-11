@@ -15,7 +15,15 @@ export class FooCompononent implements OnInit {
   o: Observable<Object>;
   oFoo : Observable<Foo[]>;
   constructor(public http: HttpClient) { }
+
   
+  makeTypedRequest() : void
+  {
+  //oFoo : Observable<Foo[]>; va dichiarato tra gli attributi della classe
+  this.oFoo = this.http.get<Foo[]>('https://jsonplaceholder.typicode.com/posts');
+  this.oFoo.subscribe(data => {this.fooData = data;});
+  }
+
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
