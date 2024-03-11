@@ -100,3 +100,18 @@
 .btn-block {
     margin: 0 10px; 
   }
+
+  .img-carti {
+    max-width: 40px; /* o qualsiasi altra dimensione desiderata */
+    height: 40px;
+  }
+
+  .img-ye {
+    max-width: 40px; /* o qualsiasi altra dimensione desiderata */
+    height: 40px;
+  }
+
+  .img-abel {
+    max-width: 40px; /* o qualsiasi altra dimensione desiderata */
+    height: 40px;
+  }
