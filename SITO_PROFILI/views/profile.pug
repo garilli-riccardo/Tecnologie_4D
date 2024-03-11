@@ -2,7 +2,7 @@ doctype html
 html
  head
    title #{title}
-   link(rel='stylesheet', href='/css/style.css')
+   link(rel='stylesheet', href='/styles/styles.css')
    meta(name="viewport" content="width=device-width, initial-scale=1")
  body
    header.header
@@ -16,5 +16,5 @@ html
          | #{person.tagline}
        p.profile-bio
          | #{person.bio}
-       a.button.button-twitter(href=`${person.twitter}`)
-         | Follow me on Twitter
+       a.button.buttonsp(href=`${person.spotify}`)
+         | Listen on Spotify

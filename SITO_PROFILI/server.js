@@ -11,14 +11,14 @@ app.get('/', (req, res) => {
 
 app.get('/profili', (req, res) => {
   res.render('profili', {
-    title: 'Profili',
+    title: 'PROFILI',
     people: people.profiles 
   });
 });
 app.get('/profile', (req, res) => {
   const person = people.profiles.find((p) => p.id === req.query.id);
   res.render('profile', {
-    title: `About ${person.firstname} ${person.lastname}`,
+    title: ` ${person.firstname} ${person.lastname}`,
     person,
   });
 });
