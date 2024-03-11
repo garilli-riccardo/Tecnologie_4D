@@ -14,6 +14,26 @@ function getProfileDataAbel(nome) {
   };
 }
 
+function getProfileDataCarti(nome) {
+  return {
+    nome: nome,
+    eta: '30',
+    biografia: 'Una breve biografia del profilo...',
+    genere_musicale: '',
+  };
+}
+
+function getProfileDataYe(nome) {
+  return {
+    nome: nome,
+    eta: '30',
+    biografia: 'Una breve biografia del profilo...',
+    genere_musicale: '',
+  };
+}
+
+
+
 // Homepage
 app.get('/', (req, res) => {
   res.render('index', { title: 'Sito Profili' });
@@ -33,8 +53,13 @@ app.get('/profili/:persona', (req, res) => {
 app.get('/profilo/:nome', (req, res) => {
   const nome = req.params.nome;
   const profilo = getProfileDataAbel(nome);
+  const profilo2 = getProfileDataYe(nome);
+  const profilo3 = getProfileDataCarti(nome);
+ 
   
   res.render('profilo', profilo);
+  res.render('profilo', profilo2);
+  res.render('profilo', profilo3);
 });
 
 app.listen(port, () => {
