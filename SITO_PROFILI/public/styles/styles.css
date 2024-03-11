@@ -1,7 +1,29 @@
+.html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .homepage {
     font-size: 150px; 
     font-weight: bold; 
     text-align: center;
+ 
+}
+
+h1.titolo-profili {
+  font-size: 150px; 
+  font-weight: bold; 
+  text-align: center;
+}
+.contenitore-bottone {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
 }
 
 .button {
@@ -22,10 +44,15 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   width: fit-content;
+  height: fit-content;
   word-break: break-word;
   border: 0;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 }
+
+
 
 .button-carti {
     background: #5E5DF0;
@@ -48,6 +75,7 @@
   word-break: break-word;
   border: 0;
   text-align: center;
+ 
 }
 
 .button-ye{

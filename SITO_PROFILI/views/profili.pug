@@ -1,19 +1,17 @@
 doctype html
 html
-  head
-    title=title
-    link(rel='stylesheet', type='text/css', href='styles/styles.css')
-    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
-  body
-    h1.homepage PROFILI
-    .container
-      .row
-        .col-md-4.d-flex.flex-column.align-items-center
-          img(src='/styles/images/carti.jpeg', alt='carti', class ='img-fluid img-carti')
-          a.button-carti.btn.btn-primary(href='/carti') Playboi Carti
-        .col-md-4.d-flex.flex-column.align-items-center
-          img(src='/styles/images/ye.jpeg', alt='ye', class ='img-fluid img-ye')
-          a.button-ye.btn.btn-primary(href='/ye') Kanye West
-        .col-md-4.d-flex.flex-column.align-items-center
-          img(src='/styles/images/abel.jpeg', alt='abel', class ='img-fluid img-abel')
-          a.button-abel.btn.btn-primary(href='/abel') The Weeknd
+ head
+   title #{title}
+   link(rel='stylesheet', href='/css/style.css')
+   meta(name="viewport" content="width=device-width, initial-scale=1")
+ body
+   header.header
+         h1 #{title}
+   article.container
+     each person in people
+       div.person
+         div.person-image(style=`background: url('${person.imgSrc}') top center no-repeat; background-size: cover;`)
+         h2.person-name
+           | #{person.firstname} #{person.lastname}
+         a(href=`/profile?id=${person.id}`)
+           | View Profile
