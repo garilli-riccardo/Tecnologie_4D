@@ -11,4 +11,7 @@ html
     p TESTO: 
     pre #{song.lyrics}
     hr
-    a.centered(href="/") Back to Menu
+    a.button.centered(href=`${song.spotify}`)
+         | ASCOLTA SU SPOTIFY
+    hr
+    a.right(href="/") Back to Menu
