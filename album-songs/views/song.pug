@@ -4,8 +4,11 @@ html
     title #{song.title}
     link(rel="stylesheet", href="/styles/styles.css")
   body
-    h1 #{song.title}
+    h1.titolo #{song.title}
+    img(src=`/styles/images/${song.thumbnail}`, alt=song.title)
+    
     p AUTORE: #{song.author}
-    p TESTO: #{song.lyrics}
-    img(src=`/images/${song.thumbnail}`, alt=song.title)
-    a(href="/") Back to Menu
+    p TESTO: 
+    pre #{song.lyrics}
+    hr
+    a.centered(href="/") Back to Menu
