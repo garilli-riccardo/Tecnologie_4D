@@ -22,6 +22,8 @@ app.get('/song/:song_id', (req, res) => {
 
 
 
+
+
 // Rotta per restituire i dati delle canzoni come JSON
 app.get('/api/album-songs', (req, res) => {
   res.json(songsData);

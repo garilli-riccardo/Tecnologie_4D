@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <h2>Email inviate</h2>
+  <div *ngFor="let email of emails" class="card mb-3" [ngClass]="{'special': email.speciale}">
+    <div class="card-header">{{ email.subject }}</div>
+    <div class="card-body">
+      <h5 class="card-title">Destinatario: {{ email.recipient }}</h5>
+      <p class="card-text">Corpo email: {{ email.body }}</p>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-info" (click)="espandiEmail(email)">Espandi/Chiudi</button>
+      <button class="btn btn-warning" (click)="rendiSpeciale(email)">Speciale</button>
+    </div>
+    <div *ngIf="email.espanso" class="card-body">
+      <p class="card-text">Corpo email completo: {{ email.body }}</p>
+    </div>
+  </div>
+</div>
