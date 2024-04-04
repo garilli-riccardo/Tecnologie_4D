@@ -6,14 +6,18 @@ import { Email } from './email.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent {
   title = 'email-cognome';
-  newEmail: Email = new Email('', '', '');
-
+  newEmail: Email = new Email('', '', '', '', false, false);
   emails: Email[] = [];
 
   inviaEmail() {
+    this.newEmail.orarioInvio = new Date().toLocaleTimeString();
     this.emails.push(this.newEmail);
-    this.newEmail = new Email('', '', '');
+    this.newEmail = new Email('', '', '', '', false, false);
   }
 }
+
+

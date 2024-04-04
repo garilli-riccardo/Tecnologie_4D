@@ -4,13 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { MandamailComponent } from './mandamail/mandamail.component';
+import { MailmandataComponent } from './mailmandata/mailmandata.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MandamailComponent
+    MailmandataComponent
   ],
   imports: [
     BrowserModule,

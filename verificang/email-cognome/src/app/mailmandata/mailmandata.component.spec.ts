@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MandamailComponent } from './mandamail.component';
+import { MandamailComponent } from './mailmandata.component';
 
 describe('MandamailComponent', () => {
   let component: MandamailComponent;

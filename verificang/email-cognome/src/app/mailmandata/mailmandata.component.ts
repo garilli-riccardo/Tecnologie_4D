@@ -3,12 +3,14 @@ import { Email } from '../email.model';
 
 @Component({
   selector: 'app-sent-mail',
-  templateUrl: './mandamail.component.html',
-  styleUrls: ['./mandamail.component.css']
+  templateUrl: './mailmandata.component.html',
+  styleUrls: ['./mailmandata.component.css']
 })
-export class MandamailComponent {
+export class MailmandataComponent {
   @Input()
   emails!: Email[];
+  orario: string = '';
+  mostra: boolean = false; 
 
   espandiEmail(email: Email): void {
     email.espanso = !email.espanso;
@@ -16,5 +18,11 @@ export class MandamailComponent {
 
   rendiSpeciale(email: Email): void {
     email.speciale = !email.speciale;
+  }
+
+
+
+  getOrario(email: any) {
+    email.orarioInvio = new Date().toLocaleTimeString();
   }
 }
