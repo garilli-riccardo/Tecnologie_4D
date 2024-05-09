@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>minimeteo</title>
+    <link rel="stylesheet" href="app.component.css">
+</head>
+<body>
+    <h1 class="titolo">MINIMETEO</h1>
+    <div class="form-container">
+    <input class="ewt"class type="text" placeholder="Inserire una città" id="cityInput" #city>
+    </div>
+    <div class="form-container">
+    <button class="shadow__btn" (click)="getMeteo(city.value)"> CERCA</button>
+    </div>
+    
+
+    <hr>
+    <img src="http://openweathermap.org/img/wn/{{ results.weather[0].icon }}.png"  class="img-fluid mt-3 w-25 mx-auto d-block">
+    <table>
+        <tr>
+            <th>Nome della città:</th>
+            <td>{{nome}}</td>
+        </tr>
+        <tr>
+            <th>Gradi effettivi:</th>
+            <td>{{temp}} °C</td>
+        </tr>
+        <tr>
+            <th>Gradi percepiti:</th>
+            <td>{{feelslike}} °C</td>
+        </tr>
+        <tr>
+            <th>Percentuale di nuvole:</th>
+            <td>{{clouds}} % </td>
+        </tr>
+        <tr>
+            <th>Visibilità:</th>
+            <td>{{humidity}} %</td>
+        </tr>
+        <tr>
+            <th>Velocità del vento:</th>
+            <td>{{wind_speed}} km/h</td>
+        </tr>
+        <tr>
+            <th>Direzione del vento:</th>
+            <td>{{wind_direction}}</td>
+        </tr>
+        <tr>
+            <th>Descrizione generale:</th>
+            <td>{{summary}}</td>
+        </tr>
+    </table>
+</body>
+
+
+
+
+<hr>
+<div *ngFor="let day of forecast; let i = index">
+    <h2>{{ i + 1 }} giorni fa </h2>
+    <img src="http://openweathermap.org/img/wn/{{ day.weather[0].icon }}.png" class="weather-icon">
+    <table>
+        <tr>
+            <th>Gradi effettivi:</th>
+            <td>{{ day.main.temp }} °C</td>
+        </tr>
+        <tr>
+            <th>Gradi percepiti:</th>
+            <td>{{ day.main.feels_like }} °C</td>
+        </tr>
+        <tr>
+            <th>Descrizione generale:</th>
+            <td>{{ day.weather[0].description }}</td>
+        </tr>
+        <tr>
+            <th>Percentuale di nuvole:</th>
+            <td>{{ day.clouds.all }} %</td>
+        </tr>
+        <tr>
+            <th>Velocità e direzione del vento:</th>
+            <td>{{ day.wind.speed }} km/h verso {{ convertiGradiNellaDirezione(day.wind.deg) }}</td>
+        </tr>
+    </table>
+</div>
+</html>
